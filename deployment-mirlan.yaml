@@ -2,19 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: nginx-app
-  name: nginx-app
+    app: my-db
+  name: mydb
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx-app
+      app: my-db
   template:
     metadata:
       labels:
-        app: nginx-app
-      name: nginx-app
+        app: my-db
+      name: my-db
     spec:
       containers:
-      - image: nginx:alpine
-        name: nginx-app
+      - image: mysql
+        name: my-db
